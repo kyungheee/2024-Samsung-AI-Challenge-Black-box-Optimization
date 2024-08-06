@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "2024-samsung-ai-challenge-black-box-optimization"
+version = "0.1.0"
+description = ""
+authors = ["yolee <youngsub.lee@ext.uni.lu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+nbdev = "^2.3.27"
+jupyter = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
