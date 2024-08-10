@@ -6,7 +6,7 @@ authors = ["yolee <youngsub.lee@ext.uni.lu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 nbdev = "^2.3.27"
 jupyter = "^1.0.0"
 
