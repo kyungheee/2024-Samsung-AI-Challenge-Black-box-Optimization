@@ -6,7 +6,7 @@
 python3.8 -m venv ss_env
 source ss_env/bin/activate
 
-pip install --upgrade pip
+pip install --upgrade pip setuptools wheel
 pip install -r module/requirements.txt
 ```
 
