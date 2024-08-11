@@ -3,12 +3,10 @@
 ### Prerequisites
 
 ```
-python3.8 -m venv ss_env
-source ss_env/bin/activate
-
-pip install --upgrade pip setuptools wheel
+conda create -n ss_env python=3.8
+conda activate ss_env
+conda install numpy pandas scikit-learn seaborn matplotlib
 pip install -r module/requirements.txt
-pip install numpy==1.21.6 # 따로 설치
 ```
 
 ### Running the Script
@@ -40,6 +38,9 @@ project_root/
 │   ├── visualization/
 │   │   ├── __init__.py
 │   │   └── plot_tools.py         # Script with functions for data visualization
+|   ├── optimization/
+│   │   ├── __init__.py
+│   │   └── README.md     
 │   ├── README.md                 # Documentation for the module
 │   ├── main.py                   # Main script to run the pipeline and model
 │   └── requirements.txt          # List of required Python packages
