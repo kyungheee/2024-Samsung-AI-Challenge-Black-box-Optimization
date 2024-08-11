@@ -5,14 +5,15 @@
 ```
 python3.8 -m venv ss_env
 source ss_env/bin/activate
-pip install -r module/requirements.txt
+
 pip install --upgrade pip
+pip install -r module/requirements.txt
 ```
 
 ### Running the Script
 
 ```
-python main.py
+python module/main.py
 ```
 
 
