@@ -15,6 +15,7 @@ def create_pipeline(df):
     scaler = MinMaxScaler()
     
     # 피처 분류
+    df = df.drop(columns=['y'])
     skewed_features = detect_skewness(df)
     bimodal_features = detect_bimodal(df)
     

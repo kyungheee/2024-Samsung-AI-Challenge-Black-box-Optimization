@@ -5,8 +5,9 @@
 ```
 conda create -n ss_env python=3.8
 conda activate ss_env
-conda install numpy pandas scikit-learn seaborn matplotlib
-pip install pycaret sweetviz joblib
+conda install numpy pandas scikit-learn seaborn matplotlib 
+pip install --upgrade pip setuptools wheel
+pip install pycaret sweetviz joblib==1.2.0
 
 # pip install -r module/requirements.txt
 ```
@@ -19,7 +20,7 @@ python module/main.py
 
 
 
-### Directory Structure
+# Directory Structure
 ```
 project_root/
 │
@@ -40,9 +41,11 @@ project_root/
 │   ├── visualization/
 │   │   ├── __init__.py
 │   │   └── plot_tools.py         # Script with functions for data visualization
-|   ├── optimization/             [#12](https://github.com/kyungheee/2024-Samsung-AI-Challenge-Black-box-Optimization/issues/12)
+|   ├── optimization/             # **Let's build the optimization algorithms**
 │   │   ├── __init__.py
-│   │   └── README.md     
+│   │   └── README.md
+|   ├── results/
+│   │   └── result_submission.csv     
 │   ├── README.md                 # Documentation for the module
 │   ├── main.py                   # Main script to run the pipeline and model
 │   └── requirements.txt          # List of required Python packages
