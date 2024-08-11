@@ -10,9 +10,9 @@ from .detect_bimodal import detect_bimodal
 from .bimodal_transformer import BimodalTransformer
 
 # 파이프라인 만들기
-def create_pipeline(df, minmax=MinMaxScaler):
+def create_pipeline(df):
     
-    scaler = minmax()
+    scaler = MinMaxScaler()
     
     # 피처 분류
     skewed_features = detect_skewness(df)
@@ -40,8 +40,8 @@ def create_pipeline(df, minmax=MinMaxScaler):
     # apply transformation
     preprocessor = ColumnTransformer(
         transformers=[
-            ('num', numeric_transformer, [col for col in df.columns if col not in skewed_features + bimodal_features])
-            ('skewed', skewed_transformer, skewed_features)
+            ('num', numeric_transformer, [col for col in df.columns if col not in (skewed_features + bimodal_features)]),
+            ('skewed', skewed_transformer, skewed_features),
             ('bimodal', bimodal_transformer, bimodal_features)
         ]
     )

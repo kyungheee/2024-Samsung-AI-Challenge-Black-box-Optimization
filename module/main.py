@@ -6,11 +6,11 @@ from visualization.plot_tools import histogram,boxplots,heatmap,pairplot,sweetvi
 
 def main():
     # 1. load the datasets
-    train_df = load_data('../../data/train.csv').drop(columns=['ID'])
-    test_df = load_data('../../data/test.csv').drop(columns=['ID'])
+    train_df = load_data('data/train.csv').drop(columns=['ID'])
+    test_df = load_data('data/test.csv').drop(columns=['ID'])
 
     # 2. create the processing pipeline
-    pipeline = create_pipeline(train_df, minmax=True)
+    pipeline = create_pipeline(train_df)
     
     # 3. separate X and y
     train_X = train_df.drop(columns=['y'])
@@ -33,7 +33,7 @@ def main():
     preds = predict_model(best_model, data=new_test_df)
     
     # 6. prepare the submission file
-    submission = pd.read_csv('../../data/sample_submission.csv')
+    submission = pd.read_csv('data/sample_submission.csv')
     submission['y'] = preds['Label']
     submission.to_csv('../result_submission.csv', index = False)
     
