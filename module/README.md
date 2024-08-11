@@ -6,6 +6,7 @@
 python3.8 -m venv ss_env
 source ss_env/bin/activate
 pip install -r module/requirements.txt
+pip install --upgrade pip
 ```
 
 ### Running the Script
@@ -13,6 +14,8 @@ pip install -r module/requirements.txt
 ```
 python main.py
 ```
+
+
 
 ### Directory Structure
 ```
