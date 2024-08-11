@@ -1,4 +1,6 @@
-# Uncertainty Quantification (UQ) Foundational Papers 
+# Let's read and summarize on [#12](https://github.com/kyungheee/2024-Samsung-AI-Challenge-Black-box-Optimization/issues/12)
+
+## 1. Uncertainty Quantification (UQ) Foundational Papers
 
 | **Title**                                                                 | **Description**                                                                                                                                   | **Link**                                                |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|

@@ -2,18 +2,20 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import sweetviz as sv
 
-def histogram(df,figsize=(20,20)):
-    fig, axes = plt.subplots(4,3,figsize=figsize)
-    axes = axes.ravel() # Converts a two-dimensional array to a one-dimensional array
+def histogram(df, figsize=(20,20), save_path=None):
+    fig, axes = plt.subplots(4, 3, figsize=figsize)
+    axes = axes.ravel()
     
     for i, col in enumerate(df.columns):
         sns.histplot(df[col], ax=axes[i], kde=True)
         axes[i].set_title(f'Distribution of {col}')
     
     plt.tight_layout()
-    plt.show()
+    if save_path:
+        plt.savefig(save_path)
 
-def boxplots(df,figsize=(20,20)):
+
+def boxplots(df, figsize=(20,20), save_path=None):
     fig, axes = plt.subplots(4, 3, figsize=figsize)
     axes = axes.ravel()
 
@@ -22,19 +24,24 @@ def boxplots(df,figsize=(20,20)):
         axes[i].set_title(f'Box-plot of {col}')
 
     plt.tight_layout()
-    plt.show()
-
-def heatmap(df):
-    plt.figure(figsize=(12,10))
-    sns.heatmap(df.corr(), annot=True, cmap=True)
+    if save_path:
+        plt.savefig(save_path)
+        
+def heatmap(df, save_path=None):
+    plt.figure(figsize=(12, 10))
+    sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
     plt.title('Features Correlation Heatmap')
-    plt.show()
-    
-def pairplot(df):
+    if save_path:
+        plt.savefig(save_path)
+        
+def pairplot(df, save_path=None):
     sns.pairplot(df)
     plt.title('Pairplot of Features')
-    plt.show()
-    
-def sweetviz_report(df, report_name='sweetviz_report.html'):
+    if save_path:
+        plt.savefig(save_path)
+        
+def sweetviz_report(df, report_name='sweetviz_report.html', save_path=None):
     report = sv.analyze(df)
+    if save_path:
+        report_name = save_path
     report.show_html(report_name)

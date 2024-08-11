@@ -17,7 +17,7 @@ def main():
     train_y = train_df['y']
     
     new_train_X = pipeline.fit_transform(train_X)
-    new_train_X = pd.DataFrame(new_train_X, columns=train_X.columns)
+    new_train_X = pd.DataFrame(new_train_X)
     
     new_train_df = pd.concat([new_train_X, train_y.reset_index(drop=True)], axis=1)
     
@@ -25,24 +25,24 @@ def main():
     regressor = setup(data=new_train_df, target='y', session_id=42)
     best_model = compare_models()
     
-    save_model(best_model, 'best_model')
+    save_model(best_model, 'module/results/best_model')
 
     # 5. preprocess the test data and make prediction
     new_test_X = pipeline.transform(test_df)
-    new_test_df = pd.DataFrame(new_test_X, columns=test_df.columns)
+    new_test_df = pd.DataFrame(new_test_X)
     preds = predict_model(best_model, data=new_test_df)
     
     # 6. prepare the submission file
     submission = pd.read_csv('data/sample_submission.csv')
-    submission['y'] = preds['Label']
-    submission.to_csv('../result_submission.csv', index = False)
+    submission['y'] = preds.iloc[:, -1]
+    submission.to_csv('module/results/result_submission.csv', index = False)
     
     # 7. generate visualization
-    histogram(train_df)
-    boxplots(train_df)
-    heatmap(train_df)
-    pairplot(train_df)
-    sweetviz_report(train_df, 'sweetviz_report.html')
+    histogram(train_df, save_path='module/results/histogram.png')
+    boxplots(train_df, save_path='module/results/boxplots.png')
+    heatmap(train_df, save_path='module/results/heatmap.png')
+    pairplot(train_df, save_path='module/results/pairplot.png')
+    sweetviz_report(train_df, 'module/results/sweetviz_report.html')
 
 if __name__ == "__main__":
     main()
