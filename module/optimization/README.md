@@ -2,6 +2,8 @@
 
 ## 1. Uncertainty Quantification (UQ) Foundational Papers 
 
+summarize on [#12](https://github.com/kyungheee/2024-Samsung-AI-Challenge-Black-box-Optimization/issues/12)
+
 | **Title**                                                                 | **Description**                                                                                                                                   | **Link**                                                |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
 | Survey of Uncertainty Quantification Methods for Optimization Problems   | Provides an overview of various UQ methods applicable to optimization problems, including Monte Carlo, polynomial chaos, and stochastic collocation.  | [Link](https://arxiv.org/html/2302.13425v5)   |
@@ -11,7 +13,9 @@
 | Stochastic Model Updating with Uncertainty Quantification: An Overview and Tutorial                    | Discusses stochastic programming techniques for handling uncertainty in optimization problems, emphasizing practical UQ methods in decision-making.   | [Link](https://www.sciencedirect.com/science/article/pii/S0888327023006921) |
 
 
-## 2. Surrogate Model + Bayesian Optimization Foundational Papers
+## 2. Surrogate Model + Bayesian Optimization Foundational Papers 
+
+summarize on [#13](https://github.com/kyungheee/2024-Samsung-AI-Challenge-Black-box-Optimization/issues/13)
 
 | **Title**                                                                 | **Description**                                                                                                                                   | **Link**                                                |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
