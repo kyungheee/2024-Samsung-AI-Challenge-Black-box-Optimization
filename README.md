@@ -34,12 +34,15 @@ Model기반 Black-box 최적화 알고리즘 개발
 ## 팀원 구성
 
 <table>
+   </tr>
  <tr>
+    <td align="center"><a href="https://github.com/kyungheee"><img src="https://avatars.githubusercontent.com/kyungheee" width="130px;" alt=""></a>
     <td align="center"><a href="https://github.com/rhycha"><img src="https://avatars.githubusercontent.com/rhycha" width="130px;" alt=""></a></td>
-    <td align="center"><a href="https://github.com/kyungheee"><img src="https://avatars.githubusercontent.com/kyungheee" width="130px;" alt=""></a></td>
-  </tr>
-  <tr>
+    </td>
+ <tr>
+    <td align="center"><a href="https://github.com/kyungheee"><b>kyungheee</b></a>
     <td align="center"><a href="https://github.com/rhycha"><b>rhycha</b></a></td>
-    <td align="center"><a href="https://github.com/kyungheee"><b>kyungheee</b></a></td>
-  </tr>
+  </td>
+    </tr>
+
 </table>
