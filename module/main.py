@@ -1,7 +1,7 @@
 import pandas as pd
 from pycaret.regression import setup, compare_models, save_model, load_model, predict_model
 from data.load_data import load_data
-from module.preprocessing.pipeline22 import create_pipeline
+from preprocessing.pipeline22 import create_pipeline
 from auto_ml.model import run_automl
 from visualization.plot_tools import histogram,boxplots,heatmap,pairplot,sweetviz_report
 
