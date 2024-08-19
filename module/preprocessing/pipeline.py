@@ -1,38 +1,39 @@
-# í•„ìš”í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬ ê°€ì ¸ì˜¤ê¸°
+# ?•„?š”?•œ ?¼?´ë¸ŒëŸ¬ë¦? ê°?? ¸?˜¤ê¸?
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, PowerTransformer
 from sklearn.impute import SimpleImputer
 
-# ë§Œë“  í•¨ìˆ˜ë“¤ ê°€ì ¸ì˜¤ê¸°
+# ë§Œë“  ?•¨?ˆ˜?“¤ ê°?? ¸?˜¤ê¸?
 from .detect_skewness import detect_skewness
 from .detect_bimodal import detect_bimodal
 from .bimodal_transformer import BimodalTransformer
 
-# íŒŒì´í”„ë¼ì¸ ë§Œë“¤ê¸°
+
+# ?ŒŒ?´?”„?¼?¸ ë§Œë“¤ê¸?
 def create_pipeline(df):
     
     scaler = MinMaxScaler()
     
-    # í”¼ì²˜ ë¶„ë¥˜
+    # ?”¼ì²? ë¶„ë¥˜
     df = df.drop(columns=['y'])
     skewed_features = detect_skewness(df)
     bimodal_features = detect_bimodal(df)
     
-    # skewed_featuresì— ëŒ€í•œ pipeline
+    # skewed_features?— ????•œ pipeline
     skewed_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='median')), # Handle missing values
         ('power', PowerTransformer()) # Normalize skewed features
     ])
     
-    # bimodal_featuresì— ëŒ€í•œ pipeline
+    # bimodal_features?— ????•œ pipeline
     bimodal_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='median')),
         ('bimodal', BimodalTransformer()), # Custom transformation for bimodal distributions
         ('scaler', scaler) # Scale features using selected scaler
     ])
     
-    # ë‚˜ë¨¸ì§€ featuresì— ëŒ€í•œ pipeline
+    # ?‚˜ë¨¸ì?? features?— ????•œ pipeline
     numeric_transformer = Pipeline(steps=[
         ('imputer', SimpleImputer(strategy='median')),
         ('scaler', scaler)
@@ -47,7 +48,7 @@ def create_pipeline(df):
         ]
     )
     
-    # single pipelineìœ¼ë¡œ combine
+    # single pipeline?œ¼ë¡? combine
     return Pipeline(steps=[
         ('preprocessor', preprocessor)
     ])
