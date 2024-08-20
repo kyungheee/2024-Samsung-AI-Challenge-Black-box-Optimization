@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "sampling-service"
+version = "0.1.0"
+description = ""
+authors = ["yolee <youngsub.lee@ext.uni.lu>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+nbdev = "^2.3.27"
+imbalanced-ensemble = "^0.2.2"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

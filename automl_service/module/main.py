@@ -1,12 +1,12 @@
 import pandas as pd
 from pycaret.regression import setup, compare_models, save_model, load_model, predict_model
 from data.load_data import load_data
-from preprocessing.pipeline22 import create_pipeline
+from preprocessing.pipeline import create_pipeline
 from auto_ml.model import run_automl
 from visualization.plot_tools import histogram,boxplots,heatmap,pairplot,sweetviz_report
 
 def main():
-    # 1. load the datasets
+    # 1. load the datasets    
     train_df = load_data('../data/train.csv').drop(columns=['ID'])
     test_df = load_data('../data/test.csv').drop(columns=['ID'])
 
