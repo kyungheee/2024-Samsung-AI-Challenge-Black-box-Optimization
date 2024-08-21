@@ -7,7 +7,7 @@ from visualization.plot_tools import histogram,boxplots,heatmap,pairplot,sweetvi
 
 def main():
     # 1. load the datasets    
-    train_df = load_data('../data/train.csv').drop(columns=['ID'])
+    train_df = load_data('../data/train_resampled.csv')
     test_df = load_data('../data/test.csv').drop(columns=['ID'])
 
     # 2. create the processing pipeline
